@@ -1,0 +1,18 @@
+{
+  "origin": "GVA",
+  "destination": "PTP",
+  "departure_date": "2027-01-21",
+  "return_date": "2027-02-07",
+  "adults": 2,
+  "cabin_class": "economy",
+  "market": "FR",
+
+  "outbound_flights": ["AF1843", "AF758"],
+  "inbound_flights": ["AF751", "AF1542"],
+
+  "target_price": null,
+  "alert_min_drop": 20,
+  "missing_alert_after_days": 3,
+  "weekly_recap_weekday": 6,
+  "timezone": "Europe/Zurich"
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>GVA → PTP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E7F0EF; --surface:#F7FBFA; --ink:#0B2830; --muted:#4F6E76;
+  --line:#0C7A8A; --accent:#C8265F; --grid:#CADBDA;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#08171D; --surface:#0E2530; --ink:#E4F1F1; --muted:#8CB0B6;
+         --line:#4CC3D2; --accent:#FF7AA2; --grid:#1D3843; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:400 1rem/1.5 "Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:920px;margin:0 auto;padding:clamp(20px,5vw,52px) clamp(16px,4vw,32px) 56px}
+h1{font-size:clamp(1.15rem,2.6vw,1.35rem);font-weight:600;margin:0;letter-spacing:-.005em}
+.meta{margin:2px 0 0;color:var(--muted)}
+.demo{display:inline-block;margin:14px 0 0;padding:4px 10px;border:1px solid var(--accent);
+  border-radius:6px;color:var(--accent);font-weight:600;font-size:.9rem}
+.hero{margin:clamp(28px,6vw,56px) 0 clamp(20px,4vw,32px)}
+.price{margin:0;font-size:clamp(3.6rem,15vw,7.4rem);font-weight:800;line-height:.92;
+  letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.verdict{margin:14px 0 0;font-size:1.2rem;font-weight:600}
+.verdict.low{color:var(--accent)}
+.sub{margin:2px 0 0;color:var(--muted)}
+.chart{background:var(--surface);border-radius:16px;padding:clamp(10px,2vw,18px) clamp(8px,2vw,16px) 6px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart.mobile{display:none}
+.grid{stroke:var(--grid);stroke-width:1}
+.ylab,.xlab{fill:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.ylab{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
+.ln{fill:none;stroke:var(--line);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.dot{fill:var(--surface);stroke:var(--line);stroke-width:1.8}
+.hit{fill:transparent}
+.hit:hover{fill:var(--line);fill-opacity:.18}
+.lowdot{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+.lowlab{fill:var(--accent);font-size:14px;font-weight:700;paint-order:stroke;
+  stroke:var(--surface);stroke-width:5px;stroke-linejoin:round}
+.now{fill:var(--line);stroke:var(--surface);stroke-width:2.5}
+.tgt{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 5}
+.tgtlab{fill:var(--accent);font-size:13px;font-weight:600}
+.miss{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linecap:round}
+.empty{fill:var(--muted);font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 24px;margin:28px 0 0;padding:20px 0 0;
+  border-top:1px solid var(--grid)}
+.stats dt{color:var(--muted);font-size:.9rem}
+.stats dd{margin:0;font-size:1.45rem;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.stats dd.n{font-size:.9rem;font-weight:400;color:var(--muted);letter-spacing:0}
+.legs{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;margin-top:36px}
+.leg h3{margin:0 0 6px;font-size:1rem;font-weight:600}
+.leg ul{list-style:none;margin:0;padding:0}
+.leg li{display:flex;gap:14px;align-items:baseline;padding:7px 0;border-top:1px solid var(--grid)}
+.fl{font-weight:700;min-width:5.2ch}
+.tm{color:var(--muted);font-variant-numeric:tabular-nums}
+.tm sup{font-size:.7em;margin-left:2px}
+footer{margin-top:40px;color:var(--muted);font-size:.88rem;max-width:62ch}
+footer p{margin:0 0 4px}
+@media (max-width:640px){
+  .chart.desktop{display:none}.chart.mobile{display:block}
+  .stats{grid-template-columns:1fr 1fr}
+  .legs{grid-template-columns:1fr}
+  .ylab,.xlab{font-size:14px}
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Genève → Pointe-à-Pitre</h1>
+    <p class="meta">21 janvier → 7 février 2027, 2 adultes, économie</p>
+    
+  </header>
+
+  <section class="hero" aria-live="polite">
+    <p class="price">—</p>
+    <p class="verdict ">En attente du premier relevé.</p>
+    <p class="sub"></p>
+  </section>
+
+  <div class="chart desktop"><svg viewBox="0 0 880 170" role="img" aria-label="Graphique en attente"><text x="440.0" y="85" text-anchor="middle" class="empty">La courbe apparaîtra dès le deuxième relevé.</text></svg></div>
+  <div class="chart mobile"><svg viewBox="0 0 420 165" role="img" aria-label="Graphique en attente"><text x="210.0" y="82" text-anchor="middle" class="empty">La courbe apparaîtra dès le deuxième relevé.</text></svg></div>
+
+  <dl class="stats"><div><dt>Départ dans</dt><dd>89 jours</dd><dd class='n'>21 janvier 2027</dd></div></dl>
+
+  <div class="legs"><section class="leg"><h3>Aller, jeudi 21 janvier</h3><ul><li><span class="fl">AF1843</span></li><li><span class="fl">AF758</span></li></ul></section><section class="leg"><h3>Retour, dimanche 7 février</h3><ul><li><span class="fl">AF751</span></li><li><span class="fl">AF1542</span></li></ul></section></div>
+
+  <footer>
+    <p></p>
+    <p>Prix relevé une fois par jour. Les tarifs bougent en continu : vérifie le prix final sur le site de la compagnie avant d'acheter.</p>
+  </footer>
+</main>
+</body>
+</html>
